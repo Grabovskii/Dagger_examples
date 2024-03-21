@@ -1,0 +1,89 @@
+In this section, we outline the construction of birational quasi-isomorphism for $\gc_h^{\dagger}(\bg)$, as well as the construction of the initial extended cluster. For all the other information, refer to the main paper~\cite{multdual}.
+
+\subsection{The maps $\mathcal{F}$, $\mathcal{Q}$ and $\mathcal{G}$}
+
+\paragraph{Notation.} For a generic element $U \in \GL_n$, the element $U_\oplus \in \GL_n$ is an upper triangular matrix and $U_-\in \GL_n$ is a unipotent lower triangular matrix, such that $U = U_\oplus U_-$.
+
+\paragraph{The map $\mathcal{F}$.}  Let $\bg := (\Gamma_1,\Gamma_2,\gamma)$ be a BD triple of type $A_{n-1}$. Define the sequence $\mathcal{F}_k:\GL_n\dashrightarrow \GL_n$ of rational maps via
+\begin{equation}
+    \mathcal{F}_0(U):= U, \ \ \mathcal{F}_k(U):= \tilde{\gamma}^*[\mathcal{F}_{k-1}(U)_-]U, \ \ k \geq 1.
+\end{equation}
+The birational map $\mathcal{F}:\GL_n \dashrightarrow \GL_n$ is defined as the limit 
+\begin{equation}
+    \mathcal{F}(U):= \lim_{k \rightarrow \infty} \mathcal{F}_k(U).
+\end{equation}
+Since $\gamma$ is nilpotent, the sequence $\mathcal{F}_k$ stabilizes at $k = \deg \gamma$, so $\mathcal{F}(U) = \mathcal{F}_{\deg \gamma}(U)$. The inverse of $\mathcal{F}$ is given by
+\begin{equation}
+    \mathcal{F}^{-1}(U):= \tilde{\gamma}^*(U_-)^{-1}U.
+\end{equation}
+The map $\mathcal{F}$ is neither a Poisson map nor a quasi-isomorphism. However, by means of $\mathcal{F}$ one can construct Poisson birational quasi-isomorphisms. For various invariance properties of $\mathcal{F}$, refer to \cite[Section 4.2]{multdual}.
+
+\paragraph{Birational quasi-isomorphisms.} Define the birational map $\mathcal{Q}:\GL_n \dashrightarrow \GL_n$ via
+\begin{equation}
+    \mathcal{Q}(U):= \rho(U)^{-1} U \rho(U), \ \ \rho(U):=\prod_{i=1}^{\rightarrow}[\tilde{\gamma}^*]^{i}(U_-).
+\end{equation}
+The inverse of $\mathcal{Q}$ is given by
+\begin{equation}
+    \mathcal{Q}^{-1}(U):=\mathcal{F}^c(U):= \mathcal{F}(U)\tilde{\gamma}^*(\mathcal{F}(U)_-)^{-1}.
+\end{equation}
+Let $\pi_{\bg}^{\dagger}$ and $\pi_{\std}^{\dagger}$ be the Poisson bivectors associated with an arbitrary BD triple $\bg$ and $\bg_{\std}$ (of type $A_{n-1}$), respectively. If the $r_0$ parts of $\pi_{\bg}^{\dagger}$ and $\pi_{\std}^{\dagger}$ are the same, then $\mathcal{Q}:(\GL_n,\pi_{\std}^{\dagger}) \dashrightarrow (\GL_n,\pi_{\bg}^{\dagger})$ is a Poisson isomorphism. Moreover, as a map $\mathcal{Q}:(\GL_n,\gc_h^{\dagger}(\bg_\std))\dashrightarrow (\GL_n,\gc_h^{\dagger}(\bg))$, it is a birational quasi-isomorphism, with the marked variables given by 
+\begin{equation}
+    \{h_{i+1,i+1} \ | \ i \in \Gamma_2\}.
+\end{equation}
+
+If $\tilde{\bg}\prec \bg$ is another BD triple of type $A_{n-1}$, then there is a birational quasi-isomorphism $\mathcal{G}:(\GL_n,\gc_h^{\dagger}(\tilde{\bg})) \dashrightarrow (\GL_n,\gc_h^{\dagger}(\bg))$. If $\tilde{\mathcal{Q}}$ is defined as the map $\mathcal{Q}$, but with respect to the BD triple $\tilde{\bg}$, then $\mathcal{G} = \mathcal{Q}\circ \tilde{\mathcal{Q}}$. As a map $\mathcal{G}:(\GL_n,\pi_{\tilde{\bg}}^{\dagger})\dashrightarrow (\GL_n,\pi_{\bg}^{\dagger})$, it is a Poisson isomorphism if the $r_0$ parts of $\pi_{\tilde{\bg}}^{\dagger}$ and $\pi_{\bg}^{\dagger}$ are the same. The marked variables for $\mathcal{G}$ are given by
+\begin{equation}
+    \{h_{i+1,i+1} \ | \ i \in \Gamma_2\setminus \tilde{\Gamma}_2\}.
+\end{equation}
+For more explicit formulas of $\mathcal{G}$, refer to \cite[Section 4.4, Section 4.5]{multdual}.
+
+\subsection{Initial extended cluster} The initial extended cluster comprises three types of functions: $c$-functions, $\varphi$-functions and $h$-functions. Only the description of the $h$-functions depends on the choice of the Belavin-Drinfeld triple.
+
+\paragraph{Description of $\varphi$- and $c$-functions.} For an element $U \in \GL_n$, let us set
+\begin{equation}\label{eq:big_phi_def_h}
+\Phi_{kl}(U):=\begin{bmatrix}(U^0)^{[n-k+1,n]} & U^{[n-l+1,n]} & (U^2)^{\{n\}} & \cdots & (U^{n-k-l+1})^{\{n\}}\end{bmatrix}, \ \ k,l \geq 1, \ k+l \leq n;
+\end{equation}
+\begin{equation}\label{eq:s_def}
+s_{kl}:=\begin{cases}
+(-1)^{k(l+1)} \ &n \ \text{is even},\\
+(-1)^{(n-1)/2 + k(k-1)/2 + l(l-1)/2} \ & n \ \text{is odd}.
+\end{cases}
+\end{equation}
+Then the $\varphi$-functions are given by
+\begin{equation}\label{eq:phi_h_def}
+\varphi_{kl}(U):=s_{kl} \det \Phi_{kl}(U).
+\end{equation}
+The $c$-functions are uniquely defined via
+\begin{equation}\label{eq:c_def}
+\det(I+\lambda U) = \sum_{i=0}^{n} \lambda^{i} s_i c_i(U)
+\end{equation}
+where $s_i := (-1)^{i(n-1)}$ and $I$ is the identity matrix. Note that $c_0 = I$ and $c_n = \det U$. 
+
+\paragraph{Description of the $h$-functions.} Let $\Pi$ be a set of simple roots of type $A_{n-1}$ and $\bg:=(\Gamma_1,\Gamma_2,\gamma)$ be a BD triple. We identify $\Pi$  with the interval $[1,n-1]$. For a given $\alpha_0 \in \Pi \setminus \Gamma_2$, set $\alpha_t:=\gamma(\alpha_{t-1})$, $t \geq 1$. Recall that the sequence $S^{\gamma}(\alpha_0):=\{\alpha_{t}\}_{t \geq 0}$ is the \emph{$\gamma$-string} associated to $\alpha_0$; $\gamma$-strings partition $\Pi$. For each $\gamma$-string $S^{\gamma}(\alpha_0) = \{\alpha_0,\alpha_1,\ldots,\alpha_{m}\}$, for each $i \in [0,m]$ and $j \in [\alpha_i+1,n]$, set
+%(-1)^{(j-(\alpha_i+1))(n-(\alpha_i+1))} 
+\begin{equation}\label{eq:h_fun}
+h_{\alpha_i+1,j}(U) := (-1)^{\varepsilon_{\alpha_i+1,j}}\det [\mathcal{F}(U)]^{[j,n]}_{[\alpha_i+1,n-j+\alpha_i+1]} \prod_{t \geq i+1}^m \det [\mathcal{F}(U)]^{[\alpha_t+1,n]}_{[\alpha_t+1,n]}
+\end{equation}
+where $\varepsilon_{ij}$ is defined as
+\begin{equation}\label{eq:h_sign}
+\varepsilon_{ij} := (j-i)(n-i), \ \ 1 \leq i \leq j \leq n.
+\end{equation}
+We refer to the functions $h_{ij}$, $2 \leq i \leq j \leq n$, together with $h_{11}(U):=\det U$ as the \emph{$h$-functions}. 
+
+\paragraph{Frozen variables.} In the case of $\gc_h^{\dagger}(\bg,\GL_n)$, the frozen variables are given by the set
+\begin{equation}
+\{c_1,c_2,\ldots,c_{n-1}\} \cup \{h_{i+1,i+1} \ | \ i \in \Pi \setminus \Gamma_2\} \cup \{h_{11}\}.
+\end{equation}
+In the case of $\gc_h^{\dagger}(\bg,\SL_n)$, $h_{11}(U) = 1$, so this variable is absent. The zero loci of the frozen variables foliate into unions of symplectic leaves of the ambient Poisson variety $(\GL_n,\pi_{\bg}^{\dagger})$ or $(\SL_n,\pi_{\bg}^{\dagger})$. Moreover, the frozen $h$-variables do not vanish on $\SL_n^{\dagger}$.
+
+\paragraph{Initial extended cluster.} The initial extended cluster $\Psi_0$ of $\gc_h^{\dagger}(\bg,\GL_n)$ is given by the set
+\begin{equation}\label{eq:iniext}
+    \{h_{ij} \ | \ 2 \leq i \leq j \leq n\} \cup \{\varphi_{kl} \ | \ k,l \geq 1, \ k+l\leq n\} \cup \{c_1,\ldots,c_{n-1}\}\cup\{h_{11}\}.
+\end{equation}
+The initial extended cluster of $\gc_h^{\dagger}(\bg,\SL_n)$ is obtained from $\Psi_0$ via removing $h_{11}$.
+
+\paragraph{A generalized cluster mutation.} In the initial extended cluster, only the variable $\varphi_{11}$ is equipped with a nontrivial \emph{string}, which is given by $(1,c_1,\ldots,c_{n-1},1)$. The generalized mutation relation for $\varphi_{11}$ reads
+\begin{equation}\label{eq:p11mut}
+\varphi_{11} \varphi_{11}^{\prime} = \sum_{r=0}^n c_r \varphi_{21}^{r} \varphi_{12}^{n-r}.
+\end{equation}
+Other mutations of the initial extended cluster follow the usual pattern from the theory of cluster algebras of geometric type.

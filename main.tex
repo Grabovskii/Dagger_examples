@@ -1,0 +1,186 @@
+\documentclass[11pt]{article}%{amsart}%{article}
+%for sideset indices, use \sideset{}{^a}
+\renewcommand{\baselinestretch}{1.05}
+\topmargin0.0cm
+\headheight0.0cm
+\headsep0.0cm
+\oddsidemargin0.0cm
+\textheight23.0cm
+\textwidth16.5cm
+\footskip1.0cm
+
+\usepackage{csquotes} %just to quote the conjecture
+\usepackage{amsmath}%
+\usepackage{amsfonts}%
+\usepackage{amssymb}%
+\usepackage{graphicx}
+\usepackage{mathtools}
+\usepackage{afterpage} %clever page break for figures
+
+%\usepackage{showlabels}
+\usepackage{subcaption}
+
+\usepackage{xcolor}
+%\usepackage{enumitem}
+%\setlist[enumerate]{label*=\arabic*.}
+
+\usepackage{amsthm} %for theorem styles
+\usepackage[colorlinks]{hyperref} %for reference
+\AtBeginDocument{\hypersetup{
+    citecolor=magenta,
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,    
+    }}
+\usepackage{enumerate}
+\usepackage[all,cmtip]{xy}
+\usepackage{doi}
+
+
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\trace}{trace}
+\DeclareMathOperator{\sll}{sl}
+\DeclareMathOperator{\Ad}{Ad}
+\DeclareMathOperator{\ad}{ad}
+\DeclareMathOperator{\Tr}{Tr}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\SL}{SL}
+\DeclareMathOperator{\Sp}{Sp}
+\DeclareMathOperator{\Spin}{Spin}
+\DeclareMathOperator{\SO}{SO}
+\DeclareMathOperator{\gl}{gl}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\Spec}{Spec}
+
+\DeclareMathOperator{\Irr}{Irr}
+\DeclareMathOperator{\Cop}{Cop}
+\newcommand{\Copk}{\Cop_{\kappa}}
+\DeclareMathOperator{\Mon}{Mon}
+\DeclareMathOperator{\LMon}{LMon}
+
+\DeclareMathOperator{\inv}{\mathbf{inv}}
+\DeclareMathOperator{\fr}{\mathbf{fr}}
+\DeclareMathOperator{\Frac}{Frac}
+
+
+%%%%%%%%%%%%%%
+%% МАКРОСЫ
+%%%%%%%%%%%%%%
+\newcommand{\dif}{\left.\frac{d}{dt}\right|_{t=0}}
+\newcommand{\difs}{\left.\frac{d}{ds}\right|_{s=0}}
+\newcommand{\g}{\mathfrak g}
+\newcommand{\h}{\mathfrak h}
+\newcommand{\frb}{\mathfrak b}
+\newcommand{\pprime}{{\prime\prime}}
+\newcommand{\loge}{\overset{\log}{\sim}}
+\newcommand{\gc}{\mathcal{GC}}
+\newcommand{\tgc}{\widetilde{\mathcal{GC}}}
+\newcommand{\hgc}{\widehat{\mathcal{GC}}}
+
+\newcommand{\bg}{\mathbf{\Gamma}}
+\newcommand{\std}{\text{std}}
+
+\newcommand{\op}{\mathrm{op}}
+\newcommand{\togamma}{{\mathring{\phantom{\gamma}}\kern-6.3pt\tilde{\gamma}}}
+\newcommand{\togammas}{\togamma^*}
+\newcommand{\const}{\mathrm{const}}
+\newcommand{\ogamma}{\mathring{\gamma}}
+\newcommand{\ogammas}{\mathring{\gamma}^*}
+%Set-theoretic gamma
+\newcommand{\sgamma}{\check{\gamma}}
+\newcommand{\sgammas}{\check{\gamma}^*}
+\newcommand{\onu}{\mathring{\nu}}
+\newcommand{\onus}{\mathring{\nu}^*}
+\newcommand{\underf}[1]{\underline{\mathcal{F}}_{\,#1}}
+\newcommand{\underff}{\underline{\mathcal{F}}}
+
+\newcommand{\pit}{\mathring{\Pi}_{\Gamma_1}}
+\newcommand{\hatpit}{\mathring{\Pi}_{\hat{\Gamma}_1}}
+\newcommand{\pig}{\mathring{\Pi}_{\Gamma_2}}
+\newcommand{\hatpig}{\mathring{\Pi}_{\hat{\Gamma}_2}}
+
+\newcommand{\sinv}[1]{\,\hspace*{-3pt}\left. #1 \hspace*{-4pt}\right.^{-1}  }
+%\newcommand{\rum}{\left.U_-\right.^{-1}}
+\newcommand{\rum}{\sinv{U_-}}
+
+\newcommand{\dqdq}{[d_U^R\mathcal{Q}\otimes d_U^R\mathcal{Q}]}
+
+\newcommand{\Chi}{\mathcal{X}}
+\newcommand{\Alpha}{\mathcal{A}}
+
+%------------------------------------------------------------
+\newtheorem*{theorem*}{Theorem}
+\newtheorem*{proposition*}{Proposition}
+\theoremstyle{definition}\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{lemma}[definition]{Lemma}%[section]
+\newtheorem{proposition}[definition]{Proposition}%[section]
+\theoremstyle{definition}\newtheorem{remark}[definition]{Remark}
+\newtheorem{corp}{Corollary}[definition]
+\theoremstyle{remark}
+\newtheorem{rmk}[definition]{Remark}%[section]
+\numberwithin{equation}{section}
+
+\captionsetup[figure]{labelfont=bf,labelsep=period,font=it}
+\renewcommand\thesubfigure{\alph{subfigure}}
+\captionsetup[subfigure]{labelfont=bf, labelformat=parens, labelsep=space}
+
+\begin{document}
+
+\setcounter{tocdepth}{2}
+
+
+\SetBlockThreshold{1}
+
+\title{Supplementary note for generalized cluster structures on $\SL_n^{\dagger}$}
+%\date{}
+\author{Dmitriy Voloshyn and Michael Gekhtman}
+\maketitle
+
+\makeatletter
+\def\blfootnote{\xdef\@thefnmark{}\@footnotetext}
+\makeatother
+
+\begin{abstract}
+This is a supplementary note for the main paper \emph{Generalized cluster structures on $\SL_n^{\dagger}$} that contains explicit examples of generalized cluster structures compatible with $\pi_{\bg}^{\dagger}$ in type $A_{n-1}$, as well as a list of some of the instrinsic problems of the theory. This note will be updated over time.
+\end{abstract}
+
+%\blfootnote{\textit{2010 Mathematics Subject Classification.} 53D17, 13F60.}
+%\blfootnote{\textit{Key words and phrases.} Poisson-Lie group, cluster algebra, Belavin-Drinfeld triple.}
+
+\tableofcontents
+
+%\section{Introduction}
+%\input{introduction}
+\section{Summary of the $h$-convention}
+\input{h_summary}
+\section{Summary of the $g$-convention}
+\input{g_summary}
+\section{Relation between the $h$- and $g$-conventions}
+\input{gh_relation}
+\section{Intrinsic problems}
+\input{rel_quest}
+\newpage
+\section{Examples in $n=3$ in the $h$-convention}
+\input{h_convention/n=3_std}
+\include{h_convention/n=3_2-1}
+\include{h_convention/n=3_1-2}
+\newpage
+\section{Examples in $n=4$ in the $h$-convention}
+\input{h_convention/n=4_std}
+\include{h_convention/n=4_CG_i-i+1}
+\include{h_convention/n=4_CG_i-i-1}
+\newpage
+\section{Examples in $n=4$ in the $g$-convention}
+\input{g_convention/n=4_std}
+\include{g_convention/n=4_GC-i_i-1}
+
+%\newpage
+%\clearpage
+%\newpage
+\input{biba}
+
+\end{document}

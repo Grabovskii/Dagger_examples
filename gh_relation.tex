@@ -1,0 +1,19 @@
+In this section, we briefly mention the relation between the $g$- and the $h$-conventions. Let $\bg:=(\Gamma_1,\Gamma_2,\gamma)$ be an arbitrary BD triple of type $A_{n-1}$.
+
+\paragraph{Variables.} The $c$-variables in both the $h$- and the $g$-conventions are the same. For the other variables in the initial extended clusters, the connection is as follows. \begin{enumerate}[1)]
+    \item For $\phi$- and $\varphi$-functions, $\phi_{kl}(W_0^{-1}UW_0) = \varphi_{kl}(U)$ where $W_0:=\sum_{i=1}^{n-1}(-1)^{i+1}e_{n-i+1,i}$.
+    \item For $g_{ij}$ and $h_{ji}$ from the initial extended clusters of $\gc_h^{\dagger}(\bg)$ and $\gc_g^{\dagger}(\bg^{\op})$, $g_{ij}(U) = (-1)^{\varepsilon_{ji}}h_{ji}(U^T)$ where $\varepsilon_{ji}:=(n-j)(i-j)$.
+\end{enumerate}
+
+\paragraph{Quivers.} The initial quiver $Q_g(\bg)$ for the $g$-convention can be obtained from the initial quiver $Q_h(\bg^{\op})$ for the $h$-convention via the following steps:
+\begin{itemize}
+\item Replace each vertex $\varphi_{kl}$ with $\phi_{kl}$, $2\leq k+l \leq n$, $k,l \geq 1$ and each $h_{ji}$ with $g_{ij}$, $2\leq j \leq i \leq n$;
+\item For each $g_{ij}$, $2 \leq j \leq i \leq n$, reverse the orientation of the arrows in its neighborhood;
+\item For the vertices $\phi_{kl}$ with $k+l = n$ and $k \geq 2$, add an arrow $\phi_{kl}\rightarrow \phi_{k-1,l+1}$;
+\item Remove the arrow $\phi_{1,n-1}\rightarrow g_{11}$.
+\end{itemize}
+
+\paragraph{Mutation equivalence.} In $n=3$, the initial extended cluster of $\gc_g^{\dagger}(\bg,\GL_3)$ can be obtained from the initial extended cluster of $\gc_h^{\dagger}(\bg,\GL_3)$ (for any $\bg$) via a sequence of mutations (see Section~\ref{s:ghequiv}). We conjecture that there is no such sequence in $n \geq 4$.
+
+\paragraph{Birational quasi-isomorphisms.} Define $\mathcal{F}$, $\mathcal{Q}$ and $\mathcal{G}$ relative the BD triple $\bg$, and define $\mathcal{F}^{\op}$, $\mathcal{Q}^{\op}$ and $\mathcal{G}^{\op}$ relative the opposite BD triple $\bg^{\op}$. Then 
+$\mathcal{F}(U^T) = \mathcal{F}^{\op}(U)^T$, $\mathcal{Q}(U^T) = \mathcal{Q}^{\op}(U)^T$, $\mathcal{G}(U^T) = \mathcal{G}^{\op}(U)^T$.
